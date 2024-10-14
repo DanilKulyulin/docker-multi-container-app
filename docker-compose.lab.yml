@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    environment:
+      ENV: lab
+    ports:
+      - "8081:80"  # Expose web on a different port for lab
+
+  db:
+    environment:
+      MYSQL_ROOT_PASSWORD: lab_root_password
+      MYSQL_DATABASE: lab_exampledb
+      MYSQL_USER: lab_user
+      MYSQL_PASSWORD: lab_pass

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    environment:
+      ENV: production
+    ports:
+      - "80:80"  # Expose web on port 80 for production
+
+  db:
+    environment:
+      MYSQL_ROOT_PASSWORD: prod_root_password
+      MYSQL_DATABASE: prod_exampledb
+      MYSQL_USER: prod_user
+      MYSQL_PASSWORD: prod_pass
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

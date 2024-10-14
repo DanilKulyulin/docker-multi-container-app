@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    environment:
+      ENV: development
+    volumes:
+      - ./src:/usr/share/nginx/html
+    ports:
+      - "8080:80"  # For development, expose web on a different port
+
+  db:
+    environment:
+      MYSQL_ROOT_PASSWORD: dev_root_password
+      MYSQL_DATABASE: dev_exampledb
+      MYSQL_USER: dev_user
+      MYSQL_PASSWORD: dev_pass
